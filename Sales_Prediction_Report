@@ -1,0 +1,85 @@
+# TASK 4: SALES PREDICTION USING ADVERTISING DATA
+
+## 1. Objective
+
+The objective of this project is to analyze advertising expenditure data and build a **Linear Regression** model to predict product sales. The project also aims to determine which advertising channel has the greatest impact on sales.
+
+## 2. Dataset Overview
+
+* **Dataset:** Advertising.csv
+* **Features:** TV, Radio, Newspaper (Advertising Expenditure)
+* **Target Variable:** Sales
+* **Number of Records:** 200
+* **Missing Values:** 0
+
+## 3. Methodology
+
+### Data Preprocessing
+
+* Loaded the dataset using Pandas.
+* Removed the **Unnamed: 0** column.
+* Checked for missing values (none found).
+
+### Exploratory Data Analysis (EDA)
+
+* Generated a **Correlation Heatmap** to study relationships between variables.
+* Created a **TV vs Sales Scatter Plot** to visualize the linear relationship.
+
+### Feature Selection
+
+* **Input Features (X):** TV, Radio, Newspaper
+* **Target Variable (y):** Sales
+
+### Model Building
+
+* Split the dataset into **80% training** and **20% testing** data.
+* Trained a **Linear Regression** model using Scikit-learn.
+
+### Model Evaluation
+
+The model was evaluated using:
+
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
+* R² Score
+
+## 4. Results and Model Performance
+
+| Metric   | Value  | Interpretation                                                    |
+| -------- | ------ | ----------------------------------------------------------------- |
+| R² Score | 0.8994 | The model explains approximately 89.94% of the variance in sales. |
+| RMSE     | 1.78   | The average prediction error is approximately 1.78 sales units.   |
+| MSE      | 3.17   | Indicates a low overall prediction error.                         |
+
+## 5. Advertising Channel Impact
+
+| Channel   | Coefficient | Impact  |
+| --------- | ----------: | ------- |
+| Radio     |      0.1892 | Highest |
+| TV        |      0.0447 | Medium  |
+| Newspaper |      0.0028 | Lowest  |
+
+**Key Finding:**
+For every one-unit increase in **Radio advertising expenditure**, sales increase by approximately **0.189 units**, making Radio the most influential advertising channel. Newspaper advertising has minimal impact on sales.
+
+## 6. Visualizations
+
+* **correlation_heatmap.png:** Displays the correlation among TV, Radio, Newspaper, and Sales.
+![Correlation Heatmap](correlation_heatmap.png)
+* **tv_vs_sales.png:** Shows a positive linear relationship between TV advertising expenditure and Sales.
+![TV vs Sales Scatter Plot](tv_vs_sales.png)
+
+## 7. Future Prediction
+
+Using the trained Linear Regression model, the predicted sales for a sample future advertising budget is **27.71 units**.
+
+## 8. Business Insights and Recommendations
+
+* Allocate a larger portion of the advertising budget to **Radio**, as it provides the highest impact on sales.
+* Reduce investment in **Newspaper advertising**, as its contribution to sales is minimal.
+* Continue investing in **TV advertising**, which has a moderate positive effect on sales.
+* Use the model for sales forecasting and marketing budget planning.
+
+## 9. Conclusion
+
+The Linear Regression model achieved an **R² Score of 0.8994**, indicating strong predictive performance. The analysis shows that **Radio advertising** has the greatest influence on sales, followed by **TV advertising**, while **Newspaper advertising** contributes very little. Businesses can improve marketing efficiency by reallocating budget from Newspaper advertising to Radio advertising.
